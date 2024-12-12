@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Your description here">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Web Development">
+        <meta name="author" content="Oroby">
+        <title>The warehouse</title>
+
+        <!-- Add your stylesheets here -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+              <div class="logo" id="logo">
+                <h1><a href="index.html">Oroby Logistics</a></h1>
+              </div>
+              <div class="navigation">
+                <nav>
+                    <ul>
+                        <li><a href="products.html" class="products">Products</a></li>
+                        <li><a href="locations.html" class="locations">Locations</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+              </div>
+            </div>
+        </header>
+        <div class="content-container">
+            <div class="description">
+               <h1>Place your order</h1>
+               <a>Our sophysticated system will help you place 
+                your order, anytime, anywhere. We'll make sure your 
+                product of choice gets to you</a>
+                <div class="description-button">
+                    <button id="learn-more-btn">Learn more</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class ="table-container">
+            <div class="table-title">
+                <div class = "hoveroverme">
+                    <a>Hover your cursor over the sign below and see the magic</a>
+                </div>
+                <div class ="bordered-container">
+                    <a>Input your products below</a>
+                </div>
+            </div>
+            <div class="table">
+                <table id="productTable" border="1">
+                    <thead>
+                      <tr>
+                        <th class ="product-header">Product</th>
+                        <th class ="category-header" >Category</th>
+                        <th class ="price-header">Price</th>
+                        <th class="units-header">Units</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="buttondiv">
+                <button id="AddRowButton">Add More</button>
+                <div id="warningMessage", style ="color:red; display:none">Only ten orders at a time are allowed, don't be so greedy !!</div> 
+            </div>
+            <div class = "categoryInputContainer">
+                <div id = "categoryInput">
+                    <td>What's your selected category ?: <input type = "text"></td>
+                </div> 
+            </div>
+            <div class ="CalculatePriceButtonContainer">
+                <button id="CalculatePriceButton">Calculate total price</button>
+            </div>
+                <div id = "inputWarning", style = "color:red; display:none">Please fill out all required fields</div>
+            <div>
+            </div>
+            <div class ="ResultDisplayBlock">
+                <div id = "ResultDisplay">
+                    
+                </div>
+            </div>
+        </div>
+        
+
+
+    <script src="script.js"></script>
+    </body>
+</html>

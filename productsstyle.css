@@ -1,0 +1,265 @@
+
+
+/* This is the main header styler, where oroby logistics, 
+products locations and contact tags are */
+.header-container{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #c2c2d6;
+}
+
+/*Logo takes 1/3 of the width*/
+
+.logo{
+    flex: 1 1 33.33%;
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-family: Rockwell Extra Bold, Rockwell Bold, monospace;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    font-weight: 150px;
+}
+/*We style the letters of the "Warehouse" logo */
+.logo h1{
+    text-align: center;
+    font-family: Rockwell Extra Bold, Rockwell Bold, monospace;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    font-weight: 150px;
+}
+
+/*Let's set the dimensions of the nav bar*/
+
+.navigation{
+    flex: 2 1 66.67%;
+}
+
+nav ul li{
+    display: inline;
+    padding: 80px;
+    font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+/* General styling for all links */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    padding: 1px;
+    transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Default hover settings */
+nav ul li a:hover {
+    cursor: pointer;
+    text-decoration: overline;
+    
+}
+
+/*Now I am going to target the ul li tags separately in order to give them different hover colors*/
+
+/*
+a[class = "products"]:hover{
+    color:#ff3333;
+}
+
+a[href = "#locations"]:hover {
+    color: #4d4dff;
+}
+
+a[href = "#contact"]:hover {
+    color: #adad85;
+}*/
+
+a[href="#products"]:hover {
+    color: #ff3333;
+}
+
+a[href="locations.html"]:hover {
+    color: #4d4dff;
+}
+
+a[href="#contact"]:hover {
+    color: #adad85;
+}
+
+/* Now i am going to apply a common for when you click on each tag, the:active pseudo element*/
+nav ul li a:active {
+    color: #73e600;
+}
+
+
+
+.content-container {
+    position: relative;
+    /*background-color: lightblue;*/
+    /*background-image: url(warehousebackground.jpg);*/
+    width: 100%;
+    height: 800px;
+    flex: 1 1 33.33%;
+    overflow: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+/*We have added a photo so we need to moidy opacity and make sure it olny affects said photo
+in order to achieve this, we will place another layer with a before command*/
+
+.content-container::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(warehousebackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    filter: blur(2px) brightness(0.5);
+    opacity: 0.; 
+    pointer-events: none; 
+    width: 100%;
+    height: 100%;
+}
+
+.notice-container {
+    /*background-color: red;*/
+    width: 20%;
+    height: 100px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: block;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.notice-container a {
+    color: white;
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+/*This styles the back to home page button*/
+.bordered-container {
+    background-color: blue;
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 18px;
+    background-color: #751aff;
+    background: linear-gradient(to right, #a162ff, #5e13cc);
+    transition: all 0.4s ease;
+}
+
+/*This applies an entertaining transition when you hover over the container */
+.bordered-container:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    background: linear-gradient(to right, #6c09ff, #dfc9ff);
+    background-clip: padding-box;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/*This is the "back to home page button" letters */
+.bordered-container a{
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+/*MEDIA QUERIES FOR DEVICE OPTIMIZATION*/
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+    }
+    
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: left;
+        width: 100%;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    nav ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+    
+    nav ul li {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 5px;
+        font-size: 25px;
+    }
+
+    .notice-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align:center ;
+        width: 60%;
+        overflow:visible;
+        padding-bottom: 60px;
+    }
+
+    .notice-container a {
+        font-size: 25px;
+    }
+
+    .bordered-container {
+        width: 40%;
+    }
+
+    .bordered-container a {
+        font-size: 20px;
+    }
+    
+
+}

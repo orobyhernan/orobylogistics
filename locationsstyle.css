@@ -1,0 +1,366 @@
+
+/* This is the main header styler, where oroby logistics, 
+products locations and contact tags are */
+.header-container{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #c2c2d6;
+}
+
+/*Logo takes 1/3 of the width*/
+
+.logo{
+    flex: 1 1 33.33%;
+}
+
+/*We style the letters of the "Warehouse" logo */
+.logo h1{
+    text-align: center;
+    font-family: Rockwell Extra Bold, Rockwell Bold, monospace;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    font-weight: 150px;
+}
+
+
+.logo h3{
+    text-align: center;
+    font-family: Rockwell Extra Bold, Rockwell Bold, monospace;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    font-weight: 150px;
+}
+/*Let's set the dimensions of the nav bar*/
+
+.navigation{
+    flex: 2 1 66.67%;
+}
+
+nav ul li{
+    display: inline;
+    padding: 80px;
+    font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+/* General styling for all links */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    padding: 1px;
+    transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Default hover settings */
+nav ul li a:hover {
+    cursor: pointer;
+    text-decoration: overline;
+    
+}
+
+/*Now I am going to target the ul li tags separately in order to give them different hover colors*/
+a[class = "products"]:hover{
+    color:#ff3333;
+}
+
+a[href = "#locations"]:hover {
+    color: #4d4dff;
+}
+
+a[href = "#contact"]:hover {
+    color: #adad85;
+}
+
+/* Now i am going to apply a common for when you click on each tag, the:active pseudo element*/
+nav ul li a:active {
+    color: #73e600;
+}
+
+
+.content-container {
+    position: relative;
+    /*background-color: lightblue;*/
+    /*background-image: url(warehousebackground.jpg);*/
+    width: 100%;
+    height: 2200px;
+    flex: 1 1 33.33%;
+    overflow: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+/*We have added a photo so we need to moidy opacity and make sure it olny affects said photo
+in order to achieve this, we will place another layer with a before command*/
+
+.content-container::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(warehousebackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    filter: blur(2px) brightness(0.33);
+    opacity: 0.; 
+    pointer-events: none; 
+    width: 100%;
+    height: 100%;
+}
+
+
+.locations-container {
+    /*background-color: red;*/
+    width: 30%;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    display: block;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.location1 {
+    display: flex;
+    flex-direction: column;
+    /*background-color: #73e600;*/
+    width: 100%;
+    height: 500px;
+}
+
+.location2 {
+    display: flex;
+    flex-direction: column;
+    /*background-color: blue;*/
+    width: 100%;
+    height: 500px;
+}
+
+.location3 {
+    display: flex;
+    flex-direction: column;
+    /*background-color: #adad85;*/
+    width: 100%;
+    height: 500px;
+}
+
+.location4 {
+    display: flex;
+    flex-direction: column;
+    /*background-color: orange;*/
+    width: 100%;
+    height: 500px;
+}
+
+
+#title {
+    /*background-color: aqua;*/
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 12px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    
+}
+
+h1 {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#imagecontainer {
+    box-sizing: border-box;
+    background-color: rgb(216, 18, 255);
+    width: 100%;
+    height: 200px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#image1{
+    /*background-color: #c2c2d6;*/
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(alabamalocation.JPG);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%; 
+    border-radius: 10px;
+
+    
+}
+
+#description {
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#image2{
+    /*background-color: #c2c2d6;*/
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(leipziglocation.JPG);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%; 
+    border-radius: 10px;
+}
+
+#image3{
+    /*background-color: #c2c2d6;*/
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(sanfernandolocation.JPG);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%; 
+    border-radius: 10px;
+}
+
+#image4{
+    /*background-color: #c2c2d6;*/
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(capetownlocation.JPG);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%; 
+    border-radius: 10px;
+}
+
+.checkLocationContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: blue;*/
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.checkLocationContainer a {
+    text-decoration: none;
+}
+
+.locationButton {
+    display: inline-block;
+    text-align: center;
+    border: 2px solid;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 18px;
+    background-color: #751aff;
+    background: linear-gradient(to right, #a162ff, #5e13cc);
+    transition: all 0.4s ease;
+}
+
+.locationButton:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    background: linear-gradient(to right, #6c09ff, #dfc9ff);
+    background-clip: padding-box;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white
+}
+
+.locationButton {
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*HERE BELOW ARE ALL MEDIA QUERIES FOR MOBILE DEVICE OPTIMIZATION*/
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+    }
+    
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: left;
+        width: 100%;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    nav ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+    
+    nav ul li {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 5px;
+        font-size: 25px;
+    }
+
+    .locations-container {
+        width: 60%;
+    }
+
+}
